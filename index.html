@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Happiness in a Basket - Valentine's Day Specials</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #fdfdfd;
+            color: #5c3a2e;
+        }
+        header {
+            background-color: #3a1a0f;
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid #f8d6d6;
+            position: relative;
+        }
+        .header-logo {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 80px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #ffffff;
+            color: #5c3a2e;
+            border-radius: 12px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        .card-body {
+            text-align: center;
+        }
+        .full-screen-img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain;
+        }
+        .modal-content {
+            background-color: transparent;
+            border: none;
+        }
+        .social-icons a {
+            color: #3a1a0f;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/fotos/novas/capa.JPG" alt="Logo" class="header-logo"><br><br>
+        <h1>Happiness in a Basket</h1>
+        <p>Surprise your loved one with the perfect gift!</p>
+    </header>
+
+    <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col" onclick="showImage('/fotos/cafe.jpg')">
+                <div class="card">
+                    <img src="/fotos/cafe.jpg" class="card-img-top" alt="Romantic Basket">
+                    <div class="card-body">
+                        <h5 class="card-title">Sweet Morning</h5>
+                        <p class="card-text">The Happiness in Basket breakfast set includes two mugs, chocolates, and sweet treats. It’s a perfect way to start your day with happiness. A simple, delicious gift to brighten anyone’s morning!🍫 ❤️</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" onclick="showImage('/fotos/tinto1.jpg')">
+                <div class="card">
+                    <img src="/fotos/tinto1.jpg" class="card-img-top" alt="Sweet Treats">
+                    <div class="card-body">
+                        <h5 class="card-title">Red wine Basket set</h5>
+                        <p class="card-text">The Happiness in Basket set includes wine, cheese, snacks, and a mini bottle of gin. It's a great way to enjoy a relaxing moment. A perfect gift for a tasty, cheerful experience! ✨ ❤️ </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" onclick="showImage('/fotos/branco1.jpg')">
+                <div class="card">
+                    <img src="/fotos/branco1.jpg" class="card-img-top" alt="Luxury Basket">
+                    <div class="card-body">
+                        <h5 class="card-title">White wine Basket set</h5>
+                        <p class="card-text">The Happiness in Basket set features white wine, cheese, snacks, and a mini bottle of gin. Ideal for a delightful and refreshing break. A perfect gift to enjoy life’s simple pleasures!✨</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" onclick="showImage('/fotos/tequila.jpg')">
+                <div class="card">
+                    <img src="/fotos/tequila.jpg" class="card-img-top" alt="Alcoholic Basket">
+                    <div class="card-body">
+                        <h5 class="card-title">Tequila shot Basket set</h5>
+                        <p class="card-text">The Happiness in Basket set includes a tequila shot set, chocolates, snacks, and cheese. It’s the perfect mix for a fun and flavorful experience. A great gift to share with friends and create unforgettable moments!🍷</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Screen Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-body text-center p-0">
+                    <img id="fullScreenImage" class="full-screen-img" src="" alt="Basket Image">
+                </div>
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 text-center">
+        <p>&copy; 2025 Happiness in a Basket - All rights reserved</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/happiness.in.a.basket/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+353899724487" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showImage(src) {
+            document.getElementById('fullScreenImage').src = src;
+            var modal = new bootstrap.Modal(document.getElementById('imageModal'));
+            modal.show();
+        }
+    </script>
+</body>
+</html>
